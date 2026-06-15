@@ -148,7 +148,7 @@
     }
 
     /* -------------------------------------------------------------
-       DREOPDOWN LOGOUT PROFILE SYSTEM
+       DROPDOWN LOGOUT PROFILE SYSTEM
        ------------------------------------------------------------- */
     .profile-wrapper {
       position: relative;
@@ -740,7 +740,6 @@
 </head>
 <body>
 
-  <!-- HEADER NAVIGATION & LINKS -->
   <header>
     <div class="nav-container">
       <div class="brand-logo">MALIK NAFAY <span>DEVELOPS</span></div>
@@ -752,8 +751,7 @@
         <button class="nav-btn" id="privacyBtnTop">PRIVACY POLICY</button>
         <button class="nav-btn" id="helpBtnTop">HELP</button>
         <button class="nav-btn primary-action" id="signInBtnTop">SIGN IN</button>
-        
-        <!-- Dropdown Layer for Persistent Logged Profiles -->
+         
         <div class="profile-wrapper" id="profileWrapper">
           <div class="user-profile-icon" id="userProfileIcon" title="Profile System Operational"></div>
           <div class="logout-dropdown" id="logoutDropdown">
@@ -769,7 +767,6 @@
     </div>
   </header>
 
-  <!-- HERO CORE BLOCK -->
   <section class="hero-section">
     <div class="hero-meta">TOPIC OF WEBSITE : SONG BY NAAFAY</div>
     <h1 class="hero-title">UNLIMITED 10 WEBSITE</h1>
@@ -779,15 +776,12 @@
     </p>
   </section>
 
-  <!-- MAIN PAGE COMPONENT FRAMEWORK -->
   <main class="container" id="homepage">
-    
-    <!-- MASTERPIECES SECTION (7 BLOCKS) -->
+     
     <section id="masterpieces" style="margin-bottom: 60px;">
       <h2 class="section-heading">MY 7 MASTER PIECES <span>(WORKING CHANNELS)</span></h2>
       <div class="grid-layout">
-        
-        <!-- Track 1 -->
+         
         <div class="music-card">
           <div>
             <div class="card-tag">Masterpiece 01</div>
@@ -798,7 +792,6 @@
           </a>
         </div>
 
-        <!-- Track 2 -->
         <div class="music-card">
           <div>
             <div class="card-tag">Masterpiece 02</div>
@@ -809,7 +802,6 @@
           </a>
         </div>
 
-        <!-- Track 3 -->
         <div class="music-card">
           <div>
             <div class="card-tag">Masterpiece 03</div>
@@ -820,7 +812,6 @@
           </a>
         </div>
 
-        <!-- Track 4 -->
         <div class="music-card">
           <div>
             <div class="card-tag">Masterpiece 04</div>
@@ -831,7 +822,6 @@
           </a>
         </div>
 
-        <!-- Track 5 -->
         <div class="music-card">
           <div>
             <div class="card-tag upcoming">Masterpiece 05</div>
@@ -840,7 +830,6 @@
           <button class="card-action-btn disabled" disabled>Locked Production</button>
         </div>
 
-        <!-- Track 6 -->
         <div class="music-card">
           <div>
             <div class="card-tag upcoming">Masterpiece 06</div>
@@ -849,7 +838,6 @@
           <button class="card-action-btn disabled" disabled>Locked Production</button>
         </div>
 
-        <!-- Track 7 -->
         <div class="music-card">
           <div>
             <div class="card-tag upcoming">Masterpiece 07</div>
@@ -861,12 +849,10 @@
       </div>
     </section>
 
-    <!-- UPCOMING RAPS SECTION (3 BLOCKS) -->
     <section id="upcoming" style="margin-bottom: 60px;">
       <h2 class="section-heading">UPCOMING RAPS / SONGS <span>(SCHEDULED RELEASES)</span></h2>
       <div class="grid-layout">
-        
-        <!-- Upcoming 1 -->
+         
         <div class="music-card" style="border-color: rgba(255, 42, 133, 0.15);">
           <div>
             <div class="card-tag">Studio Drop 01</div>
@@ -877,7 +863,6 @@
           </a>
         </div>
 
-        <!-- Upcoming 2 -->
         <div class="music-card" style="border-color: rgba(255, 42, 133, 0.15);">
           <div>
             <div class="card-tag">Studio Drop 02</div>
@@ -888,7 +873,6 @@
           </a>
         </div>
 
-        <!-- Upcoming 3 -->
         <div class="music-card" style="border-color: rgba(255, 42, 133, 0.15);">
           <div>
             <div class="card-tag">Studio Drop 03</div>
@@ -902,7 +886,6 @@
       </div>
     </section>
 
-    <!-- ABOUT ME EMBEDDED BOX -->
     <section id="about">
       <h2 class="section-heading">ABOUT ME <span>(BIOGRAPHY PROFILE)</span></h2>
       <div class="about-box">
@@ -922,7 +905,6 @@
 
   </main>
 
-  <!-- LINK REGISTRY INTEGRATED FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
@@ -954,7 +936,6 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC MODAL LAYER: SIGN IN -->
   <div class="modal-overlay" id="signInModal">
     <div class="modal-content">
       <button class="modal-close" id="closeSignIn">&times;</button>
@@ -963,21 +944,19 @@
         Account Authentication
       </h3>
       <p class="modal-text">Provide verification credentials and lock an identity avatar placeholder to connect.</p>
-      
-      <!-- DYNAMIC NEON ALERT BOX -->
+       
       <div class="neon-alert-box" id="modalAlertBox"></div>
 
       <form id="signInForm" onsubmit="handleAccountRegistration(event)">
         <div class="form-group">
           <label class="form-label">Gmail Handle Address</label>
-          <input type="email" class="form-input" placeholder="username@gmail.com" id="userEmailField">
+          <input type="email" class="form-input" placeholder="username@gmail.com" id="userEmailField" required>
         </div>
         <div class="form-group">
           <label class="form-label">Secure Access Password</label>
-          <input type="password" class="form-input" placeholder="••••••••" id="userPasswordField">
+          <input type="password" class="form-input" placeholder="••••••••" id="userPasswordField" required>
         </div>
 
-        <!-- 7 AVATAR COMPONENT MATRIX (WORKING BUTTONS) -->
         <div>
           <label class="avatar-selector-label">Choose An Avatar (7 Options Available)</label>
           <div class="avatar-grid-wrapper">
@@ -996,7 +975,6 @@
     </div>
   </div>
 
-  <!-- DYNAMIC MODAL LAYER: HELP OVERLAY -->
   <div class="modal-overlay" id="helpModal">
     <div class="modal-content">
       <button class="modal-close" id="closeHelp">&times;</button>
@@ -1004,256 +982,170 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         Support & Project Links
       </h3>
-      <p class="modal-text">Select one of the system access channels below to view terms, rules, and production teams configuration.</p>
+      <p class="modal-text">Need help navigating the portal or checking active production channels?</p>
+      
       <div class="help-links-list">
-        <button class="help-item-link" id="helpPrivacyLink">
-          <span>Read Privacy Policies</span>
+        <a href="#masterpieces" class="help-item-link" id="helpLinkTracks">
+          <span>Explore 7 Masterpieces</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <div class="help-item-link" style="cursor: default;">
-          <span>Malik Nafay PTV LTD Team</span>
-          <span style="font-size:11px; color:var(--btn-bg); font-weight:700; background:rgba(255,42,133,0.1); padding:2px 6px; border-radius:4px;">Core Team</span>
-        </div>
+        </a>
+        <a href="https://www.tiktok.com/@maliknafayoffical" target="_blank" class="help-item-link">
+          <span>Official TikTok Hub</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- RUNTIME SCRIPTS FOR FUNCTIONALITY & STATE CONTROLS -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closePrivacy">&times;</button>
+      <h3 class="modal-title">Privacy Protocols</h3>
+      <p class="modal-text" style="line-height: 1.6; font-size: 13px;">
+        Your identity matrix and selected avatars are securely cached strictly within your local subsystem environment (LocalStorage). No external vectors trace your transmission strings.
+      </p>
+    </div>
+  </div>
+
   <script>
-    // Document Element Registers
+    // DOM Cache Registry
     const signInModal = document.getElementById('signInModal');
     const helpModal = document.getElementById('helpModal');
+    const privacyModal = document.getElementById('privacyModal');
+    
     const signInBtnTop = document.getElementById('signInBtnTop');
     const helpBtnTop = document.getElementById('helpBtnTop');
     const privacyBtnTop = document.getElementById('privacyBtnTop');
+    
     const closeSignIn = document.getElementById('closeSignIn');
     const closeHelp = document.getElementById('closeHelp');
-    const helpPrivacyLink = document.getElementById('helpPrivacyLink');
-    
-    // Upgraded Profile Context Registers
+    const closePrivacy = document.getElementById('closePrivacy');
+
     const profileWrapper = document.getElementById('profileWrapper');
     const userProfileIcon = document.getElementById('userProfileIcon');
     const logoutDropdown = document.getElementById('logoutDropdown');
     const dropdownEmailInfo = document.getElementById('dropdownEmailInfo');
     const executeLogoutAction = document.getElementById('executeLogoutAction');
+    
+    const avatarButtons = document.querySelectorAll('.avatar-option-btn');
     const modalAlertBox = document.getElementById('modalAlertBox');
+    
+    let selectedAvatar = "";
 
-    // Input States
-    const userEmailField = document.getElementById('userEmailField');
-    const userPasswordField = document.getElementById('userPasswordField');
-    let selectedAvatarValue = "";
-
-    // Load LocalStorage Persistence Parameters on Initial System Boot
-    document.addEventListener("DOMContentLoaded", () => {
-      const persistedUser = localStorage.getItem("ngd_active_session_email");
-      const persistedAvatar = localStorage.getItem("ngd_active_session_avatar");
-
-      if (persistedUser && persistedAvatar) {
-        applyAuthenticatedUIState(persistedUser, persistedAvatar);
-      }
+    // 1. Modal Toggle Interactions
+    signInBtnTop.addEventListener('click', () => signInModal.classList.add('active'));
+    closeSignIn.addEventListener('click', () => {
+      signInModal.classList.remove('active');
+      resetAlertBox();
     });
 
-    // Handle Selection State Across 7 Avatar Option Buttons
-    const avatarButtons = document.querySelectorAll('.avatar-option-btn');
-    avatarButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        avatarButtons.forEach(btn => btn.classList.remove('selected'));
-        button.classList.add('selected');
-        selectedAvatarValue = button.getAttribute('data-avatar');
+    helpBtnTop.addEventListener('click', () => helpModal.classList.add('active'));
+    closeHelp.addEventListener('click', () => helpModal.classList.remove('active'));
+    document.getElementById('helpLinkTracks').addEventListener('click', () => helpModal.classList.remove('active'));
+
+    privacyBtnTop.addEventListener('click', () => privacyModal.classList.add('active'));
+    closePrivacy.addEventListener('click', () => privacyModal.classList.remove('active'));
+
+    // Close Modals on Outer Overlay Click
+    window.addEventListener('click', (e) => {
+      if (e.target === signInModal) { signInModal.classList.remove('active'); resetAlertBox(); }
+      if (e.target === helpModal) helpModal.classList.remove('active');
+      if (e.target === privacyModal) privacyModal.classList.remove('active');
+    });
+
+    // 2. Avatar Selection Flow
+    avatarButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        avatarButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedAvatar = btn.getAttribute('data-avatar');
       });
     });
 
-    // Context Controls for Dropdown Menus
+    // Reset Alert System Utilities
+    function resetAlertBox() {
+      modalAlertBox.className = 'neon-alert-box';
+      modalAlertBox.innerText = '';
+    }
+
+    // 3. Form Submission & State Registration
+    function handleAccountRegistration(event) {
+      event.preventDefault();
+      const email = document.getElementById('userEmailField').value.trim();
+      const password = document.getElementById('userPasswordField').value;
+
+      if (!email || !password) {
+        showAlert('Please fill out all credential strings.', 'error-state');
+        return;
+      }
+
+      if (!selectedAvatar) {
+        showAlert('Authentication failed: Missing Avatar Lock.', 'error-state');
+        return;
+      }
+
+      // Success Sequence
+      showAlert('Connection Synced Successfully!', 'success-state');
+
+      setTimeout(() => {
+        const sessionData = { email: email, avatar: selectedAvatar };
+        localStorage.setItem('ngd_session_active', JSON.stringify(sessionData));
+        applyLoggedInState(sessionData);
+        signInModal.classList.remove('active');
+        resetAlertBox();
+        document.getElementById('signInForm').reset();
+        avatarButtons.forEach(b => b.classList.remove('selected'));
+        selectedAvatar = "";
+      }, 1000);
+    }
+
+    function showAlert(message, stateClass) {
+      modalAlertBox.className = `neon-alert-box ${stateClass}`;
+      modalAlertBox.innerText = message;
+    }
+
+    // 4. Session State Management Framework
+    function applyLoggedInState(session) {
+      signInBtnTop.classList.add('hidden');
+      profileWrapper.style.display = 'block';
+      userProfileIcon.innerText = session.avatar;
+      dropdownEmailInfo.innerText = session.email;
+    }
+
+    function applyLoggedOutState() {
+      signInBtnTop.classList.remove('hidden');
+      profileWrapper.style.display = 'none';
+      userProfileIcon.innerText = '';
+      dropdownEmailInfo.innerText = '';
+      logoutDropdown.classList.remove('active');
+    }
+
+    // Toggle Dropdown Display
     userProfileIcon.addEventListener('click', (e) => {
       e.stopPropagation();
       logoutDropdown.classList.toggle('active');
     });
 
-    document.addEventListener('click', () => {
-      logoutDropdown.classList.remove('active');
-    });
-
-    // UI Window Navigation Configurations
-    signInBtnTop.addEventListener('click', () => {
-      clearModalAlert();
-      signInModal.classList.add('active');
-    });
-    closeSignIn.addEventListener('click', () => signInModal.classList.remove('active'));
-
-    helpBtnTop.addEventListener('click', () => helpModal.classList.add('active'));
-    closeHelp.addEventListener('click', () => helpModal.classList.remove('active'));
-
-    helpPrivacyLink.addEventListener('click', () => {
-      helpModal.classList.remove('active');
-      executePrivacyTabLaunch();
-    });
-
-    privacyBtnTop.addEventListener('click', executePrivacyTabLaunch);
-
-    // Trigger Account Form Validation Rules
-    function handleAccountRegistration(event) {
-      event.preventDefault();
-      clearModalAlert();
-
-      const email = userEmailField.value.trim();
-      const password = userPasswordField.value.trim();
-
-      // Cyberpunk Field Rules Assertions
-      if (!email || !password) {
-        triggerNeonAlert("error", "Invalid Access / Complete All Fields!");
-        return;
+    // Close Dropdown on Outer Workspace Intercepts
+    window.addEventListener('click', () => {
+      if (logoutDropdown.classList.contains('active')) {
+        logoutDropdown.classList.remove('active');
       }
+    });
 
-      if (!selectedAvatarValue) {
-        triggerNeonAlert("error", "Security Rule: Please select an Avatar!");
-        return;
-      }
-
-      // Success Path Execution Pipeline
-      triggerNeonAlert("success", "Access Granted — Connecting...");
-      
-      setTimeout(() => {
-        // Save Parameters securely into Persistent Browser Local Storage
-        localStorage.setItem("ngd_active_session_email", email);
-        localStorage.setItem("ngd_active_session_avatar", selectedAvatarValue);
-
-        applyAuthenticatedUIState(email, selectedAvatarValue);
-        
-        // Clean Form State & Dismiss View Frame
-        signInModal.classList.remove('active');
-        userEmailField.value = "";
-        userPasswordField.value = "";
-        avatarButtons.forEach(btn => btn.classList.remove('selected'));
-        selectedAvatarValue = "";
-      }, 1500);
-    }
-
-    // Process State Changes After Successful Validation Checks
-    function applyAuthenticatedUIState(email, avatar) {
-      signInBtnTop.classList.add('hidden');
-      profileWrapper.style.display = 'block';
-      userProfileIcon.textContent = avatar;
-      dropdownEmailInfo.textContent = email;
-    }
-
-    // Clear Persistent Engine Data Configurations on LogOut Trigger
+    // Log Out Operational Action
     executeLogoutAction.addEventListener('click', () => {
-      localStorage.removeItem("ngd_active_session_email");
-      localStorage.removeItem("ngd_active_session_avatar");
-
-      // Rollback Header Control View States
-      profileWrapper.style.display = 'none';
-      logoutDropdown.classList.remove('active');
-      signInBtnTop.classList.remove('hidden');
+      localStorage.removeItem('ngd_session_active');
+      applyLoggedOutState();
     });
 
-    // Support Alert Mechanics Helper Functions
-    function triggerNeonAlert(type, message) {
-      modalAlertBox.className = "neon-alert-box " + (type === "error" ? "error-state" : "success-state");
-      modalAlertBox.textContent = message;
-    }
-
-    function clearModalAlert() {
-      modalAlertBox.className = "neon-alert-box";
-      modalAlertBox.textContent = "";
-    }
-
-    // New Isolated Tab Blueprint Architecture for 50-60 Line Privacy Compliance
-    function executePrivacyTabLaunch() {
-      const policyNewTab = window.open('about:blank', '_blank');
-      
-      let contentString = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <title>System Compliance Privacy Policies - Malik Nafay PTV LTD</title>
-          <style>
-            body { background-color: #0d0b14; color: #ffffff; font-family: sans-serif; padding: 40px; line-height: 1.6; }
-            .wrap { max-width: 750px; margin: 0 auto; background: #161224; padding: 40px; border-radius: 12px; border: 1px solid rgba(255,42,133,0.2); }
-            h1 { color: #ff2a85; font-size: 24px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 2px solid rgba(255,42,133,0.1); padding-bottom: 10px; }
-            p { font-size: 13px; color: #a096bc; margin-bottom: 12px; text-align: justify; }
-            .line-num { color: rgba(255,42,133,0.4); font-family: monospace; display: inline-block; width: 30px; }
-          </style>
-        </head>
-        <body>
-          <div class="wrap">
-            <h1>OFFICIAL COMPLIANCE PRIVACY POLICY</h1>
-      `;
-
-      const manualPolicyLines = [
-        "Malik Nafay PTV LTD Platform Privacy Policy Document Version 10.00.",
-        "This legal policy governs data protocols for all software platforms designed under NGD.",
-        "Section 1.0: User Account Handle Collections and Verification Protocols.",
-        "We collect minimal data processing metrics necessary to deploy digital applications.",
-        "Gmail handle addresses submitted to the application network undergo internal validation cycles.",
-        "User records are parsed in local volatile browser memory architectures exclusively.",
-        "No structured storage mechanism writes identity descriptors back to centralized data silos.",
-        "Section 2.0: Media Streaming Framework Hooks and Interface References.",
-        "Audio metadata displayed on music blocks targets external streaming parameters.",
-        "Hyperlinks configured across individual track items route directly to verified user accounts.",
-        "The external interface endpoint deployed throughout this build points strictly to verified TikTok domains.",
-        "Users acknowledge redirection parameters when initiating calls to action on external anchors.",
-        "Section 3.0: Hardware Execution Environment and Optimization Protocols.",
-        "User device profiles, rendering metrics, and layout parameters align with client setups.",
-        "Optimization loops adapt interface grids dynamically for desktop environments running local hardware configurations.",
-        "System resources adjust computational pipelines depending on background style execution constraints.",
-        "CSS animations, glowing transformations, and gradient transitions utilize GPU hardware acceleration steps.",
-        "Section 4.0: Local Identity Persistence and Session Lifecycles.",
-        "Session authentication states resolve natively when user instances complete login routines.",
-        "Interface transformations remain resident only for active execution threads within client boundaries.",
-        "Reloading the primary canvas elements drops active account state structures automatically.",
-        "No third-party data tracking modules are permitted to inject parameters into this layout.",
-        "Section 5.0: Modded Application Contexts and External Component Rules.",
-        "Any analytical exploration of custom network utilities falls outside this standard document space.",
-        "Users assume complete deployment responsibilities when linking custom modified features.",
-        "We maintain structural barriers preventing data leakages across modded communication layers.",
-        "Section 6.0: Intellectual Property and Automated Song Distribution Channels.",
-        "Musical lyrics created through automated sound engines belong exclusively to their respective human designers.",
-        "Creative expressions touching regional landmarks or cultural narratives retain localized protection.",
-        "Any unauthorized commercial distribution of musical assets displayed here requires corporate sign-off.",
-        "Section 7.0: Geographic Operational Boundary Values.",
-        "Primary development pipelines function inside territorial sectors managed within Pakistan.",
-        "Local regulatory laws oversee data dispute management whenever digital infrastructure services process entries.",
-        "Section 8.0: Multi-Persona Roleplay Isolation and Context Walls.",
-        "Sub-identities or narrative personas deployed inside simulation models remain strictly isolated.",
-        "No transitional elements from primary business configurations carry forward to narrative structures.",
-        "Information security boundaries separate enterprise data profiles from fictional roleplay components.",
-        "Section 9.0: Cyber Security Thresholds and Integrity Maintenance.",
-        "Local script executions are checked against standard verification loops to block malicious scripts.",
-        "Form structures sanitise tracking values before shifting parameters to global states.",
-        "Section 10.0: Meticulous Language Classification Inventories.",
-        "Categorized reference datasets compile alphabetized inventories for data mapping tasks.",
-        "This administrative catalog operates as static read-only blocks inside operational platforms.",
-        "Section 11.0: Amendments, Timeline Revisions, and Final Governance.",
-        "Malik Nafay PTV LTD reserves authorization blocks to modify system parameters without issuing notices.",
-        "Continued use of functional application components confirms agreement to updated regulations.",
-        "All terms find validation under current state cybersecurity protocols.",
-        "Data execution paths complete reporting loops inside internal corporate offices.",
-        "System architectures comply fully with regional data transmission guidelines.",
-        "End of official system compliance metrics registry file for Website Version 10 Build.",
-        "Document verified under cryptographic hash validation sequences.",
-        "All interfaces operational. Session state tracking systems fully clear.",
-        "Security validation check completed successfully.",
-        "System configuration lock active.",
-        "Compliance monitoring engine online.",
-        "Data collection policies close."
-      ];
-
-      manualPolicyLines.forEach((lineText, index) => {
-        const displayLineNum = index + 1;
-        contentString += `<p><span class="line-num">${displayLineNum.toString().padStart(2, '0')}</span> ${lineText}</p>`;
-      });
-
-      contentString += `
-          </div>
-        </body>
-        </html>
-      `;
-
-      policyNewTab.document.write(contentString);
-      policyNewTab.document.close();
-    }
+    // 5. Initial Boot Sync Sequence (Persistence Check)
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedSession = localStorage.getItem('ngd_session_active');
+      if (savedSession) {
+        applyLoggedInState(JSON.parse(savedSession));
+      }
+    });
   </script>
 </body>
 </html>
