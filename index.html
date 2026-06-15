@@ -835,22 +835,6 @@
 
     .hidden { display: none !important; }
   </style>
-  const followBtn = document.getElementById('followBtn');
-const followModal = document.createElement('div');
-followModal.className = 'follow-modal';
-followModal.innerHTML = `
-  <div class="follow-box">
-    <h2 style="color:var(--btn-bg)">FOLLOW MALIK NAFAY</h2>
-    <p style="margin: 20px 0;">Stay updated with every new track drop!</p>
-    <button class="submit-btn" onclick="window.location.href='https://www.tiktok.com/@maliknafayoffical'">FOLLOW NOW</button>
-    <button onclick="this.parentElement.parentElement.style.display='none'" style="margin-top:15px; background:none; border:none; color:white; cursor:pointer;">Close</button>
-  </div>
-`;
-document.body.appendChild(followModal);
-
-followBtn.addEventListener('click', () => {
-  followModal.style.display = 'flex';
-});
 </head>
 <body>
 
@@ -895,24 +879,7 @@ followBtn.addEventListener('click', () => {
     <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px; font-weight: 600; letter-spacing: 1px;">
       RAPS / SAD / LOVE — HERE IS ALL EMOTIONS COMBO
     </p>
-    /* Follow Modal Styles */
-.follow-modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(13, 11, 20, 0.9);
-  z-index: 3000;
-  justify-content: center;
-  align-items: center;
-}
-.follow-box {
-  background: var(--bg-card);
-  padding: 30px;
-  border: var(--neon-border);
-  border-radius: 20px;
-  text-align: center;
-  max-width: 400px;
-}
+    
     <!-- Audio Visual Waves Component Structure -->
     <div class="audio-visualizer-container" title="Audio Stream Synchronization Status">
       <div class="visualizer-bar"></div>
@@ -992,7 +959,7 @@ followBtn.addEventListener('click', () => {
         <div class="music-card">
           <div>
             <div class="card-tag upcoming">Masterpiece 06</div>
-            <h3 class="card-title" style="color: var(--text-muted);">IMRAN KHAN </h3>
+            <h3 class="card-title" style="color: var(--text-muted);">UPCOMING SONG</h3>
           </div>
           <button class="card-action-btn disabled" disabled>Locked Production</button>
         </div>
