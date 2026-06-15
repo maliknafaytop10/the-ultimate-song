@@ -18,6 +18,7 @@
       --btn-hover: #d41f6a;
       --neon-glow: 0 0 15px rgba(255, 42, 133, 0.6);
       --neon-border: 1px solid rgba(255, 42, 133, 0.3);
+      --success-glow: 0 0 15px rgba(0, 255, 102, 0.6);
     }
 
     * {
@@ -77,7 +78,7 @@
     header {
       background-color: rgba(13, 11, 20, 0.9);
       backdrop-filter: blur(12px);
-      border-b: 1px solid rgba(160, 150, 188, 0.1);
+      border-bottom: 1px solid rgba(160, 150, 188, 0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -112,6 +113,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .nav-btn {
@@ -145,33 +147,80 @@
       background-color: var(--btn-hover);
     }
 
-    /* Profile Avatar Placeholder (Hidden Initially) */
-    .user-profile-icon {
+    /* -------------------------------------------------------------
+       DREOPDOWN LOGOUT PROFILE SYSTEM
+       ------------------------------------------------------------- */
+    .profile-wrapper {
+      position: relative;
       display: none;
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--btn-bg), #8a2be2);
+    }
+
+    .user-profile-icon {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      border: 2px solid var(--text-main);
+      border: 2px solid var(--btn-bg);
       box-shadow: var(--neon-glow);
       cursor: pointer;
-      position: relative;
-    }
-    .user-profile-icon::after {
-      content: '✓';
-      position: absolute;
-      bottom: -2px;
-      right: -2px;
-      background: #00ff66;
-      color: #000;
-      font-size: 9px;
-      font-weight: bold;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 20px;
+      background-color: var(--bg-card);
+      transition: transform 0.2s ease;
+      overflow: hidden;
+    }
+
+    .user-profile-icon:hover {
+      transform: scale(1.05);
+    }
+
+    .logout-dropdown {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: var(--bg-card);
+      border: var(--neon-border);
+      border-radius: 12px;
+      padding: 8px;
+      width: 180px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1100;
+    }
+
+    .logout-dropdown.active {
+      display: block;
+    }
+
+    .dropdown-info {
+      padding: 8px 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(160, 150, 188, 0.1);
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .logout-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #ff4a4a;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logout-btn:hover {
+      background: rgba(255, 74, 74, 0.1);
     }
 
     /* -------------------------------------------------------------
@@ -396,7 +445,7 @@
       border: var(--neon-border);
       border-radius: 20px;
       width: 90%;
-      max-width: 440px;
+      max-width: 460px;
       padding: 32px;
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), var(--neon-glow);
       transform: scale(0.9);
@@ -447,9 +496,9 @@
       margin-bottom: 24px;
     }
 
-    /* Sign In Form Specifics */
+    /* Form Fields Styling */
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .form-label {
@@ -477,6 +526,90 @@
       outline: none;
       border-color: var(--btn-bg);
       box-shadow: 0 0 8px rgba(255, 42, 133, 0.2);
+    }
+
+    /* -------------------------------------------------------------
+       AVATAR MATRIX STYLING (7 OPTIONS WORKING BUTTONS)
+       ------------------------------------------------------------- */
+    .avatar-selector-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .avatar-grid-wrapper {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .avatar-option-btn {
+      background-color: rgba(13, 11, 20, 0.6);
+      border: 1px solid rgba(160, 150, 188, 0.2);
+      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .avatar-option-btn:hover {
+      border-color: var(--btn-bg);
+      transform: scale(1.1);
+    }
+
+    .avatar-option-btn.selected {
+      border-color: var(--btn-bg);
+      background-color: rgba(255, 42, 133, 0.15);
+      box-shadow: var(--neon-glow);
+      transform: scale(1.1);
+    }
+
+    /* -------------------------------------------------------------
+       DYNAMIC NEON ALERT SYSTEM
+       ------------------------------------------------------------- */
+    .neon-alert-box {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      animation: alertSlide 0.3s forwards ease;
+    }
+
+    @keyframes alertSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .neon-alert-box.error-state {
+      display: flex;
+      background-color: rgba(255, 42, 133, 0.1);
+      border: 1px solid #ff2a85;
+      color: #ff2a85;
+      text-shadow: 0 0 8px rgba(255, 42, 133, 0.3);
+      box-shadow: var(--neon-glow);
+    }
+
+    .neon-alert-box.success-state {
+      display: flex;
+      background-color: rgba(0, 255, 102, 0.1);
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      text-shadow: 0 0 8px rgba(0, 255, 102, 0.3);
+      box-shadow: var(--success-glow);
     }
 
     .submit-btn {
@@ -601,20 +734,6 @@
       font-size: 12px;
     }
 
-    /* -------------------------------------------------------------
-       8. PRIVACY POLICY DOCUMENT CONTAINER LAYOUT (NEW TAB)
-       ------------------------------------------------------------- */
-    .policy-container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: var(--bg-card);
-      border-radius: 16px;
-      padding: 40px;
-      border: 1px solid rgba(160, 150, 188, 0.1);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      display: none; /* Controlled dynamically if inside frame, setup for window rewrite */
-    }
-
     /* Utility Display Classes */
     .hidden { display: none !important; }
   </style>
@@ -633,7 +752,19 @@
         <button class="nav-btn" id="privacyBtnTop">PRIVACY POLICY</button>
         <button class="nav-btn" id="helpBtnTop">HELP</button>
         <button class="nav-btn primary-action" id="signInBtnTop">SIGN IN</button>
-        <div class="user-profile-icon" id="userProfileIcon" title="Profile Active"></div>
+        
+        <!-- Dropdown Layer for Persistent Logged Profiles -->
+        <div class="profile-wrapper" id="profileWrapper">
+          <div class="user-profile-icon" id="userProfileIcon" title="Profile System Operational"></div>
+          <div class="logout-dropdown" id="logoutDropdown">
+            <div class="dropdown-info" id="dropdownEmailInfo">user@gmail.com</div>
+            <button class="logout-btn" id="executeLogoutAction">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+              Log Out Session
+            </button>
+          </div>
+        </div>
+
       </nav>
     </div>
   </header>
@@ -643,7 +774,7 @@
     <div class="hero-meta">TOPIC OF WEBSITE : SONG BY NAAFAY</div>
     <h1 class="hero-title">UNLIMITED 10 WEBSITE</h1>
     <div class="hero-subtitle">(BY NGD)</div>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px; font-weight: 600; tracking-wide: 1px;">
+    <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px; font-weight: 600; letter-spacing: 1px;">
       RAPS / SAD / LOVE — HERE IS ALL EMOTIONS COMBO
     </p>
   </section>
@@ -742,7 +873,7 @@
             <h3 class="card-title">ULTIMATE SUCCESS</h3>
           </div>
           <a href="https://www.tiktok.com/@maliknafayoffical" target="_blank" class="card-action-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
           </a>
         </div>
 
@@ -753,7 +884,7 @@
             <h3 class="card-title">MOTHER'S AURA</h3>
           </div>
           <a href="https://www.tiktok.com/@maliknafayoffical" target="_blank" class="card-action-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
           </a>
         </div>
 
@@ -764,7 +895,7 @@
             <h3 class="card-title">GIRLS AURA</h3>
           </div>
           <a href="https://www.tiktok.com/@maliknafayoffical" target="_blank" class="card-action-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> View on TikTok
           </a>
         </div>
 
@@ -831,12 +962,35 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         Account Authentication
       </h3>
-      <p class="modal-text">Enter your verified Google workspace handle to connect to the NGD Unlimited Network portal.</p>
+      <p class="modal-text">Provide verification credentials and lock an identity avatar placeholder to connect.</p>
+      
+      <!-- DYNAMIC NEON ALERT BOX -->
+      <div class="neon-alert-box" id="modalAlertBox"></div>
+
       <form id="signInForm" onsubmit="handleAccountRegistration(event)">
         <div class="form-group">
           <label class="form-label">Gmail Handle Address</label>
-          <input type="email" class="form-input" placeholder="username@gmail.com" required id="userEmailField">
+          <input type="email" class="form-input" placeholder="username@gmail.com" id="userEmailField">
         </div>
+        <div class="form-group">
+          <label class="form-label">Secure Access Password</label>
+          <input type="password" class="form-input" placeholder="••••••••" id="userPasswordField">
+        </div>
+
+        <!-- 7 AVATAR COMPONENT MATRIX (WORKING BUTTONS) -->
+        <div>
+          <label class="avatar-selector-label">Choose An Avatar (7 Options Available)</label>
+          <div class="avatar-grid-wrapper">
+            <button type="button" class="avatar-option-btn" data-avatar="🔥">🔥</button>
+            <button type="button" class="avatar-option-btn" data-avatar="💻">💻</button>
+            <button type="button" class="avatar-option-btn" data-avatar="🎧">🎧</button>
+            <button type="button" class="avatar-option-btn" data-avatar="🕶️">🕶️</button>
+            <button type="button" class="avatar-option-btn" data-avatar="⚡">⚡</button>
+            <button type="button" class="avatar-option-btn" data-avatar="👑">👑</button>
+            <button type="button" class="avatar-option-btn" data-avatar="🎵">🎵</button>
+          </div>
+        </div>
+
         <button type="submit" class="submit-btn">Complete Connection Process</button>
       </form>
     </div>
@@ -875,47 +1029,139 @@
     const closeSignIn = document.getElementById('closeSignIn');
     const closeHelp = document.getElementById('closeHelp');
     const helpPrivacyLink = document.getElementById('helpPrivacyLink');
+    
+    // Upgraded Profile Context Registers
+    const profileWrapper = document.getElementById('profileWrapper');
     const userProfileIcon = document.getElementById('userProfileIcon');
+    const logoutDropdown = document.getElementById('logoutDropdown');
+    const dropdownEmailInfo = document.getElementById('dropdownEmailInfo');
+    const executeLogoutAction = document.getElementById('executeLogoutAction');
+    const modalAlertBox = document.getElementById('modalAlertBox');
 
-    // UI State Actions: Sign In Window
-    signInBtnTop.addEventListener('click', () => signInModal.classList.add('active'));
+    // Input States
+    const userEmailField = document.getElementById('userEmailField');
+    const userPasswordField = document.getElementById('userPasswordField');
+    let selectedAvatarValue = "";
+
+    // Load LocalStorage Persistence Parameters on Initial System Boot
+    document.addEventListener("DOMContentLoaded", () => {
+      const persistedUser = localStorage.getItem("ngd_active_session_email");
+      const persistedAvatar = localStorage.getItem("ngd_active_session_avatar");
+
+      if (persistedUser && persistedAvatar) {
+        applyAuthenticatedUIState(persistedUser, persistedAvatar);
+      }
+    });
+
+    // Handle Selection State Across 7 Avatar Option Buttons
+    const avatarButtons = document.querySelectorAll('.avatar-option-btn');
+    avatarButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        avatarButtons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+        selectedAvatarValue = button.getAttribute('data-avatar');
+      });
+    });
+
+    // Context Controls for Dropdown Menus
+    userProfileIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      logoutDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+      logoutDropdown.classList.remove('active');
+    });
+
+    // UI Window Navigation Configurations
+    signInBtnTop.addEventListener('click', () => {
+      clearModalAlert();
+      signInModal.classList.add('active');
+    });
     closeSignIn.addEventListener('click', () => signInModal.classList.remove('active'));
 
-    // UI State Actions: Help Window
     helpBtnTop.addEventListener('click', () => helpModal.classList.add('active'));
     closeHelp.addEventListener('click', () => helpModal.classList.remove('active'));
 
-    // Help Window Inner Routing Link
     helpPrivacyLink.addEventListener('click', () => {
       helpModal.classList.remove('active');
       executePrivacyTabLaunch();
     });
 
-    // Privacy Policy Separate Document Generator Route
     privacyBtnTop.addEventListener('click', executePrivacyTabLaunch);
 
-    // Account Submit Flow Handler
+    // Trigger Account Form Validation Rules
     function handleAccountRegistration(event) {
       event.preventDefault();
-      const inputEmail = document.getElementById('userEmailField').value;
-      
-      if (inputEmail) {
-        // Remove Sign In Button, Enable System Profile View Control State
-        signInBtnTop.classList.add('hidden');
-        userProfileIcon.style.display = 'block';
-        userProfileIcon.setAttribute('title', `Active Interface: ${inputEmail}`);
-        
-        // Clear Window Interface View
-        signInModal.classList.remove('active');
-        alert(`Connection Established Successfully!\nAccount Verified: ${inputEmail}`);
+      clearModalAlert();
+
+      const email = userEmailField.value.trim();
+      const password = userPasswordField.value.trim();
+
+      // Cyberpunk Field Rules Assertions
+      if (!email || !password) {
+        triggerNeonAlert("error", "Invalid Access / Complete All Fields!");
+        return;
       }
+
+      if (!selectedAvatarValue) {
+        triggerNeonAlert("error", "Security Rule: Please select an Avatar!");
+        return;
+      }
+
+      // Success Path Execution Pipeline
+      triggerNeonAlert("success", "Access Granted — Connecting...");
+      
+      setTimeout(() => {
+        // Save Parameters securely into Persistent Browser Local Storage
+        localStorage.setItem("ngd_active_session_email", email);
+        localStorage.setItem("ngd_active_session_avatar", selectedAvatarValue);
+
+        applyAuthenticatedUIState(email, selectedAvatarValue);
+        
+        // Clean Form State & Dismiss View Frame
+        signInModal.classList.remove('active');
+        userEmailField.value = "";
+        userPasswordField.value = "";
+        avatarButtons.forEach(btn => btn.classList.remove('selected'));
+        selectedAvatarValue = "";
+      }, 1500);
     }
 
-    // New Window Isolation Framework for Privacy Policy
+    // Process State Changes After Successful Validation Checks
+    function applyAuthenticatedUIState(email, avatar) {
+      signInBtnTop.classList.add('hidden');
+      profileWrapper.style.display = 'block';
+      userProfileIcon.textContent = avatar;
+      dropdownEmailInfo.textContent = email;
+    }
+
+    // Clear Persistent Engine Data Configurations on LogOut Trigger
+    executeLogoutAction.addEventListener('click', () => {
+      localStorage.removeItem("ngd_active_session_email");
+      localStorage.removeItem("ngd_active_session_avatar");
+
+      // Rollback Header Control View States
+      profileWrapper.style.display = 'none';
+      logoutDropdown.classList.remove('active');
+      signInBtnTop.classList.remove('hidden');
+    });
+
+    // Support Alert Mechanics Helper Functions
+    function triggerNeonAlert(type, message) {
+      modalAlertBox.className = "neon-alert-box " + (type === "error" ? "error-state" : "success-state");
+      modalAlertBox.textContent = message;
+    }
+
+    function clearModalAlert() {
+      modalAlertBox.className = "neon-alert-box";
+      modalAlertBox.textContent = "";
+    }
+
+    // New Isolated Tab Blueprint Architecture for 50-60 Line Privacy Compliance
     function executePrivacyTabLaunch() {
       const policyNewTab = window.open('about:blank', '_blank');
       
-      // Building 50-60 Line Detailed Policy Script Strings
       let contentString = `
         <!DOCTYPE html>
         <html lang="en">
@@ -971,7 +1217,7 @@
         "Local regulatory laws oversee data dispute management whenever digital infrastructure services process entries.",
         "Section 8.0: Multi-Persona Roleplay Isolation and Context Walls.",
         "Sub-identities or narrative personas deployed inside simulation models remain strictly isolated.",
-        "No transactional elements from primary business configurations carry forward to narrative structures.",
+        "No transitional elements from primary business configurations carry forward to narrative structures.",
         "Information security boundaries separate enterprise data profiles from fictional roleplay components.",
         "Section 9.0: Cyber Security Thresholds and Integrity Maintenance.",
         "Local script executions are checked against standard verification loops to block malicious scripts.",
@@ -994,7 +1240,6 @@
         "Data collection policies close."
       ];
 
-      // Inject line counts strictly to reach 50-60 detailed structural policy requirement lines
       manualPolicyLines.forEach((lineText, index) => {
         const displayLineNum = index + 1;
         contentString += `<p><span class="line-num">${displayLineNum.toString().padStart(2, '0')}</span> ${lineText}</p>`;
